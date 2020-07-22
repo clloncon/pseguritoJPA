@@ -20,7 +20,7 @@ public class Profesional {
     private String correo;
     private String telefono;
     private String cargo;
-   // private String nombreyapellido;
+ 
     
     //Constructores//
     
@@ -36,7 +36,7 @@ public class Profesional {
             this.correo = correo;
             this.telefono = telefono;
             this.cargo = cargo;
-            //this.nombreyapellido = nombre + " " + apellido;
+           
     }
     
     public Profesional(String nombre, String apellido, String correo, String telefono, String cargo) {
@@ -46,7 +46,7 @@ public class Profesional {
             this.correo = correo;
             this.telefono = telefono;
             this.cargo = cargo;
-           // this.nombreyapellido = nombre + " " + apellido;
+          
     }
 
     public Profesional(int id_profesional) {
@@ -104,13 +104,7 @@ public class Profesional {
             this.cargo = cargo;
     }
 
-//   // public String getNombreyapellido() {
-//            return nombreyapellido;
-//    }
-//    public void setNombreyapellido() {
-//            this.nombreyapellido= this.nombre +" "+ this.apellido;
-//    }
-    
+
     
     //To String//
     @Override
