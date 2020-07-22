@@ -33,11 +33,12 @@
 					<td>${prof.getCorreo()}</td>
 					<td>${prof.getTelefono()}</td>
 					<td>${prof.getCargo()}</td>
+					<td><a href="${pageContext.request.contextPath}/editarProfesional/${prof.getId_profesional()}">Editar </a>| <a href="${pageContext.request.contextPath}/eliminarProfesional/${prof.getId_profesional()}">Borrar</a></td>
 			</c:forEach>
 			</tbody>
 			</thead>
 		</table>
-
+		<p><a href="crearProfesional">Crear profesional</a></p>
 	</div>
 </body>
 </html>

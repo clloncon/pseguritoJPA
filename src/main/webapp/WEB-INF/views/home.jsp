@@ -10,7 +10,11 @@
 
 <h1>Bienvenidos</h1>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-<a href="listarProfesional">Listar profesional</a></P></nav>
+<p><a href="listarProfesional">Listar profesional</a></p> <br>
+<p><a href="crearProfesional">Crear profesional</a></p> <br>
+<p><a href="listarAsesoria">Listar asesoria</a></p> <br>
+<p><a href="crearAsesoria">Crear asesoria</a></p> <br>
+</nav>
 </div>
 </body>
 </html>
