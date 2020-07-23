@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="container">
-	<c:set var="as" value="${as}"></c:set>
+	<c:set var="as" value="${model.as}"></c:set>
 	<h1>>Crear Asesoria</h1>
 	
 	<form:form action="${pageContext.request.contextPath}/guardarAsesoria" method="post">
@@ -39,13 +39,22 @@
 			<div class="row">
 				<div class="col-3">Profesional:</div>
 				<div class="col-3">
-					<input class="form-control" type="text" name="profesional"/>
+					<select name="txtid_profesional" class="form-control form-control">
+								<c:forEach items="${model.listap}" var="profesional">
+									<option value="${profesional.getId_profesional()}">${profesional.getNombre()}
+										${profesional.getApellido()} </option>
+								</c:forEach>
+							</select>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-3">Cliente:</div>
 				<div class="col-3">
-					<input class="form-control" type="text" name="cliente"/>
+					<select name="txtid_cliente" class="form-control form-control">
+								<c:forEach items="${model.listac}" var="cliente">
+									<option value="${cliente.getId_cliente()}">${cliente.getNombreEmpresa()} </option>
+								</c:forEach>
+							</select>
 				</div>
 			</div>
 			<hr>
