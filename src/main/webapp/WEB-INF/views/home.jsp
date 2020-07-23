@@ -23,8 +23,8 @@
 <p><a href="listarCapacitacion">Listar Capacitacion</a></p> <br>
 <p><a href="crearCapacitacion">Crear Capacitacion</a></p> <br>
 
-<p><a href="listarActividadMejora">Listar Actividad mejora</a></p> <br>
-<p><a href="crearActividadMejora">Crear Actividad mejora</a></p> <br>
+<p><a href="listarActividadesMejora">Listar Actividad mejora</a></p> <br>
+<p><a href="crearActividadesMejora">Crear Actividad mejora</a></p> <br>
 
 <p><a href="listarReporteAccidente">Listar Reporte accidente</a></p> <br>
 <p><a href="crearReporteAccidente">Crear Reporte accidente</a></p> <br>
