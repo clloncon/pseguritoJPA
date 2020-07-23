@@ -33,7 +33,7 @@
 					<td>${aseso.getDetalle()}</td>
 					<td>${aseso.getCliente().getNombreEmpresa()}</td>
 					<td>${aseso.getProfesional().getNombre()} ${aseso.getProfesional().getApellido()}</td>
-					<td><a href="${pageContext.request.contextPath}/editarAsesoria/${prof.getId_asesoria()}">Editar </a>| <a href="${pageContext.request.contextPath}/eliminarAsesoria/${prof.getId_asesoria()}">Borrar</a></td>
+					<td><a href="${pageContext.request.contextPath}/editarAsesoria/${aseso.getId_asesoria()}">Editar </a>| <a href="${pageContext.request.contextPath}/eliminarAsesoria/${aseso.getId_asesoria()}">Borrar</a></td>
 			</c:forEach>
 			</tbody>
 			</thead>

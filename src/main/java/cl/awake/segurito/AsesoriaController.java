@@ -12,17 +12,25 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import cl.awake.segurito.model.Asesoria;
+import cl.awake.segurito.model.Profesional;
 import cl.awake.segurito.services.AsesoriaService;
+import cl.awake.segurito.services.ProfesionalService;
 
 @Controller
 public class AsesoriaController {
+	
+//	@Autowired
+//    ClienteService cs;
+//	
+	 @Autowired
+     ProfesionalService ps;
+	
 	@Autowired
     AsesoriaService ass;
     
     @RequestMapping("/listarAsesoria")
     public ModelAndView listarAsesoria() {
             List<Asesoria> lista = ass.getAll();
-            
             return new ModelAndView("listarAsesoria","lista", lista); 
             
     }
@@ -36,7 +44,13 @@ public class AsesoriaController {
     @RequestMapping("/editarAsesoria/{id}")
     public ModelAndView editarAsesoria(@PathVariable int id) {
     	Asesoria as = ass.getById(id);
-         return new ModelAndView("editaAsesoria","as", as);
+    	List<Profesional> listap = ps.getAll();
+    	//List<Cliente> listac = cs.getAll();
+    	Map<String, Object> model = new HashMap<String, Object>();
+        model.put("as", as);
+        model.put("listap", listap);
+        // mode.put("listac", listac);
+        return new ModelAndView("editaAsesoria","model", model); 
     }
     
     @RequestMapping(value="/guardarEditAsesoria", method = RequestMethod.POST)
@@ -53,8 +67,18 @@ public class AsesoriaController {
     
     @RequestMapping("/crearAsesoria")
     public ModelAndView crearAsesoria() {
-    	Asesoria as = new Asesoria();   	
-    	 return new ModelAndView("creaAsesoria","as", as);
+
+    	Asesoria as = new Asesoria();
+    	List<Profesional> listap = ps.getAll();
+    	//List<Cliente> listac = cs.getAll();
+    	
+        Map<String, Object> model = new HashMap<String, Object>();
+        model.put("as", as);
+        model.put("listap", listap);
+       // mode.put("listac", listac);
+        
+        return new ModelAndView("creaAsesoria","model", model); 
+        
     }
     
     @RequestMapping(value="/guardarAsesoria", method = RequestMethod.POST)

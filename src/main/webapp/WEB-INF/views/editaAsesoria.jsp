@@ -16,44 +16,55 @@
 </head>
 <body>
 <div class="container">
-	<c:set var="as" value="${as}"></c:set>
+	<c:set var="as" value="${model.as}"></c:set>
 	<h1>>Editar Asesoria</h1>
 	
 	<form:form action="${pageContext.request.contextPath}/guardarEditAsesoria" method="post">
-			<input type="hidden" name="id_asesoria" value="${p.getId_asesoria()}">
+			<input type="hidden" name="id_asesoria" value="${model.as.getId_asesoria()}">
 			<div class="row">
 				<div class="col-3">Fecha y hora:</div>
 				<div class="col-3">
 					<input class="form-control" type="text" name="fechayhora"
-						value="${as.getFechayhora()}" />
+						value="${model.as.getFechayhora()}" />
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-3">Motivo:</div>
 				<div class="col-3">
 					<input class="form-control" type="text" name="motivo"
-						value="${as.getMotivo()}" />
+						value="${model.as.getMotivo()}" />
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-3">Detalle:</div>
 				<div class="col-3">
 					<input class="form-control" type="text" name="detalle"
-						value="${as.getDetalle()}" />
+						value="${model.as.getDetalle()}" />
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-3">Profesional:</div>
 				<div class="col-3">
-					<input class="form-control" type="text" name="profesional"
-						value="${as.getProfesional().getId_profesional}" />
+					<select name="txt_idprofesional" class="form-control form-control">
+							<c:forEach items="${model.listap}" var="profesional">
+								<option value="${profesional.getId_profesional()}"
+									${model.as.getProfesional().getId_profesional()==profesional.getId_profesional() ? 'selected'
+									: '' }>${profesional.getNombre()} ${profesional.getApellido()}
+								</option>
+							</c:forEach>
+					</select>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-3">Cliente:</div>
 				<div class="col-3">
-					<input class="form-control" type="text" name="cliente"
-						value="${as.getCliente().getId_cliente}" />
+					<select name="txt_idcliente" class="form-control form-control">
+							<c:forEach items="${model.listac}" var="cliente">
+								<option value="${cliente.getId_cliente()}"
+									${model.as.getCliente().getId_cliente()==cliente.getId_cliente() ? 'selected' : '' }>
+									${cliente.getNombreEmpresa()} </option>
+							</c:forEach>
+						</select>
 				</div>
 			</div>
 			<hr>
