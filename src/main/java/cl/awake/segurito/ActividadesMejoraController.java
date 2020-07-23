@@ -52,7 +52,7 @@ public class ActividadesMejoraController {
         model.put("ac", ac);
         model.put("listap", listap);
         model.put("listac", listac);
-        return new ModelAndView("editarActividadesMejora","model", model);
+        return new ModelAndView("editaActividadesMejora","model", model);
 	}
 	 
 	@RequestMapping(value ="/guardarEditActividadesMejora", method = RequestMethod.POST)
@@ -61,7 +61,7 @@ public class ActividadesMejoraController {
 		return new ModelAndView("redirect:/listarActividadesMejora");
 	}
 	
-	@RequestMapping("/eliminarActividadesMejora{id}")
+	@RequestMapping("/eliminarActividadesMejora/{id}")
 	public ModelAndView eliminarActividadesMejora(@PathVariable int id) {
 		acs.delete(id);
 		return new ModelAndView("redirect:/listarActividadesMejora");
@@ -78,7 +78,7 @@ public class ActividadesMejoraController {
         model.put("listap", listap);
         model.put("listac", listac);
         
-        return new ModelAndView("crearActividadesMejora", "model", model);
+        return new ModelAndView("creaActividadesMejora", "model", model);
 	}
 	
 	@RequestMapping(value="/guardarActividadesMejora", method = RequestMethod.POST)
