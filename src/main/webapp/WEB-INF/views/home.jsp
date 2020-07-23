@@ -12,10 +12,27 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 <p><a href="listarProfesional">Listar profesional</a></p> <br>
 <p><a href="crearProfesional">Crear profesional</a></p> <br>
+
 <p><a href="listarCliente">Listar cliente</a></p> <br>
 <p><a href="crearCliente">Crear cliente</a></p> <br>
+
 <p><a href="listarAsesoria">Listar asesoria</a></p> <br>
 <p><a href="crearAsesoria">Crear asesoria</a></p> <br>
+
+
+<p><a href="listarCapacitacion">Listar Capacitacion</a></p> <br>
+<p><a href="crearCapacitacion">Crear Capacitacion</a></p> <br>
+
+<p><a href="listarActividadMejora">Listar Actividad mejora</a></p> <br>
+<p><a href="crearActividadMejora">Crear Actividad mejora</a></p> <br>
+
+<p><a href="listarReporteAccidente">Listar Reporte accidente</a></p> <br>
+<p><a href="crearReporteAccidente">Crear Reporte accidente</a></p> <br>
+
+<p><a href="listarFactura">Listar Factura</a></p> <br>
+<p><a href="crearFactura">Crear Factura</a></p> <br>
+
+
 </nav>
 </div>
 </body>
