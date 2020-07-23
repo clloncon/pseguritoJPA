@@ -12,6 +12,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 <p><a href="listarProfesional">Listar profesional</a></p> <br>
 <p><a href="crearProfesional">Crear profesional</a></p> <br>
+<p><a href="listarCliente">Listar cliente</a></p> <br>
+<p><a href="crearCliente">Crear cliente</a></p> <br>
 <p><a href="listarAsesoria">Listar asesoria</a></p> <br>
 <p><a href="crearAsesoria">Crear asesoria</a></p> <br>
 </nav>

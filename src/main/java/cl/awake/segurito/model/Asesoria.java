@@ -1,6 +1,8 @@
 package cl.awake.segurito.model;
 
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +23,7 @@ public class Asesoria {
     
     //Ojo con el date
     
-	private String fechayhora;
+	private Date fechayhora;
 	private String motivo;
 	private String detalle;
 	
@@ -39,7 +41,7 @@ public class Asesoria {
 		
 	}
 	
-	public Asesoria(int id_asesoria, String fechayhora, String motivo, String detalle,
+	public Asesoria(int id_asesoria, Date fechayhora, String motivo, String detalle,
 			Profesional profesional, Cliente cliente) {
 		this.id_asesoria = id_asesoria;
 		this.fechayhora = fechayhora;
@@ -57,11 +59,11 @@ public class Asesoria {
 		this.id_asesoria = id_asesoria;
 	}
 
-	public String getFechayhora() {
+	public Date getFechayhora() {
 		return fechayhora;
 	}
 
-	public void setFechayhora(String fechayhora) {
+	public void setFechayhora(Date fechayhora) {
 		this.fechayhora = fechayhora;
 	}
 

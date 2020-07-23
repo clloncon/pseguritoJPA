@@ -11,6 +11,8 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://trentrichardson.com/examples/timepicker/jquery-ui-timepicker-addon.css">	
 </head>
 <body>
 <div class="container">
@@ -21,7 +23,7 @@
 			<div class="row">
 				<div class="col-3">Fecha y hora:</div>
 				<div class="col-3">
-					<input class="form-control" type="text" name="fechayhora" />
+					<input class="form-control" type="text" name="fechayhora" id="datetimepicker"/>
 				</div>
 			</div>
 			<div class="row">
@@ -39,13 +41,22 @@
 			<div class="row">
 				<div class="col-3">Profesional:</div>
 				<div class="col-3">
-					<input class="form-control" type="text" name="profesional"/>
+				<select name="id_profesional" class="form-control form-control">
+					<c:forEach items="${listap}" var="profesional">
+						<option value="${profesional.getId_profesional()}">${profesional.getNombre()}
+							${profesional.getApellido()} </option>
+						</c:forEach>
+				</select>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-3">Cliente:</div>
 				<div class="col-3">
-					<input class="form-control" type="text" name="cliente"/>
+				<select name="id_cliente" class="form-control form-control">
+					<c:forEach items="${listadoc}" var="cliente">
+						<option value="${cliente.getId_cliente()}">${cliente.getNombreEmpresa()} </option>
+					</c:forEach>
+				</select>
 				</div>
 			</div>
 			<hr>
@@ -56,6 +67,16 @@
 			</div>
 		</form:form>
 </div>
-
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="https://trentrichardson.com/examples/timepicker/jquery-ui-timepicker-addon.js"></script>
+				<script>
+			$(function () {
+				$('#datetimepicker').datetimepicker({
+					dateFormat: 'yy-mm-dd',
+					 timeFormat: 'HH:mm',
+				});
+			});
+		</script>
 </body>
 </html>

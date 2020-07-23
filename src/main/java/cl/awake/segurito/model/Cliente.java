@@ -1,11 +1,19 @@
 package cl.awake.segurito.model;
 
+
+
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Cliente {
@@ -17,11 +25,13 @@ public class Cliente {
     private String nombreEmpresa;
     @Column(name="rutempresa")
     private String rut;
-    private String fechaRegistro;
+    @Temporal(value=TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date fechaRegistro;
     
     
     
-    public Cliente(int id_cliente, String nombreEmpresa, String rut, String fechaRegistro) {
+    public Cliente(int id_cliente, String nombreEmpresa, String rut, Date fechaRegistro) {
     	this.id_cliente = id_cliente;
         this.nombreEmpresa = nombreEmpresa;
         this.rut = rut;
@@ -30,7 +40,7 @@ public class Cliente {
 
 
 
-    public Cliente(String nombreEmpresa, String rut, String fechaRegistro) {
+    public Cliente(String nombreEmpresa, String rut, Date fechaRegistro) {
 		super();
 		this.nombreEmpresa = nombreEmpresa;
 		this.rut = rut;
@@ -86,13 +96,13 @@ public class Cliente {
 
 
 
-    public String getFechaRegistro() {
+    public Date getFechaRegistro() {
         return fechaRegistro;
     }
 
 
 
-    public void setFechaRegistro(String fechaRegistro) {
+    public void setFechaRegistro(Date fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
 
