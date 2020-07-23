@@ -12,16 +12,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import cl.awake.segurito.model.Asesoria;
+import cl.awake.segurito.model.Cliente;
 import cl.awake.segurito.model.Profesional;
 import cl.awake.segurito.services.AsesoriaService;
+import cl.awake.segurito.services.ClienteService;
 import cl.awake.segurito.services.ProfesionalService;
 
 @Controller
 public class AsesoriaController {
 	
-//	@Autowired
-//    ClienteService cs;
-//	
+	@Autowired
+    ClienteService cs;
+	
 	 @Autowired
      ProfesionalService ps;
 	
@@ -45,11 +47,11 @@ public class AsesoriaController {
     public ModelAndView editarAsesoria(@PathVariable int id) {
     	Asesoria as = ass.getById(id);
     	List<Profesional> listap = ps.getAll();
-    	//List<Cliente> listac = cs.getAll();
+    	List<Cliente> listac = cs.getAll();
     	Map<String, Object> model = new HashMap<String, Object>();
         model.put("as", as);
         model.put("listap", listap);
-        // mode.put("listac", listac);
+        model.put("listac", listac);
         return new ModelAndView("editaAsesoria","model", model); 
     }
     
@@ -70,12 +72,12 @@ public class AsesoriaController {
 
     	Asesoria as = new Asesoria();
     	List<Profesional> listap = ps.getAll();
-    	//List<Cliente> listac = cs.getAll();
+    	List<Cliente> listac = cs.getAll();
     	
         Map<String, Object> model = new HashMap<String, Object>();
         model.put("as", as);
         model.put("listap", listap);
-       // mode.put("listac", listac);
+        model.put("listac", listac);
         
         return new ModelAndView("creaAsesoria","model", model); 
         

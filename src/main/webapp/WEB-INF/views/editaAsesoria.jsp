@@ -24,7 +24,7 @@
 			<div class="row">
 				<div class="col-3">Fecha y hora:</div>
 				<div class="col-3">
-					<input class="form-control" type="text" name="fechayhora"
+					<input class="form-control" type="text" name="fechayhora" id="datetimepicker"
 						value="${model.as.getFechayhora()}" />
 				</div>
 			</div>
@@ -45,7 +45,7 @@
 			<div class="row">
 				<div class="col-3">Profesional:</div>
 				<div class="col-3">
-					<select name="txt_idprofesional" class="form-control form-control">
+					<select name="profesional.id_profesional" class="form-control form-control">
 							<c:forEach items="${model.listap}" var="profesional">
 								<option value="${profesional.getId_profesional()}"
 									${model.as.getProfesional().getId_profesional()==profesional.getId_profesional() ? 'selected'
@@ -58,7 +58,7 @@
 			<div class="row">
 				<div class="col-3">Cliente:</div>
 				<div class="col-3">
-					<select name="txt_idcliente" class="form-control form-control">
+					<select name="cliente.id_cliente" class="form-control form-control">
 							<c:forEach items="${model.listac}" var="cliente">
 								<option value="${cliente.getId_cliente()}"
 									${model.as.getCliente().getId_cliente()==cliente.getId_cliente() ? 'selected' : '' }>

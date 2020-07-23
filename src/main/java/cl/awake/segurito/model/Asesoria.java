@@ -1,6 +1,5 @@
 package cl.awake.segurito.model;
 
-
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -11,6 +10,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="asesorias")
@@ -22,7 +25,8 @@ public class Asesoria {
 	private int id_asesoria;
     
     //Ojo con el date
-    
+    @Temporal(value=TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
 	private Date fechayhora;
 	private String motivo;
 	private String detalle;
