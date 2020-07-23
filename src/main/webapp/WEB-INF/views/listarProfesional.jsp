@@ -12,7 +12,9 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Lista de Profesional</h1>
+		<h1 class="display-4">Listado de profesionales</h1>
+		<br>
+		<p><a href="crearProfesional" class="btn btn-success">Crear profesional</a></p>
 
 		<table class="table">
 			<thead class="thead_dark">
@@ -24,6 +26,7 @@
                         <th>Telefono</th>
                         <th>Cargo</th>
 				</tr>
+			</thead>
 			<tbody>
 			<c:forEach items="${lista}" var="prof">
 				<tr>
@@ -33,12 +36,12 @@
 					<td>${prof.getCorreo()}</td>
 					<td>${prof.getTelefono()}</td>
 					<td>${prof.getCargo()}</td>
-					<td><a href="${pageContext.request.contextPath}/editarProfesional/${prof.getId_profesional()}">Editar </a>| <a href="${pageContext.request.contextPath}/eliminarProfesional/${prof.getId_profesional()}">Borrar</a></td>
+					<td><a class="btn btn-primary" href="${pageContext.request.contextPath}/editarProfesional/${prof.getId_profesional()}">Editar </a>  <a class="btn btn-danger" href="${pageContext.request.contextPath}/eliminarProfesional/${prof.getId_profesional()}">Borrar</a></td>
 			</c:forEach>
 			</tbody>
-			</thead>
+			
 		</table>
-		<p><a href="crearProfesional">Crear profesional</a></p>
+		
 	</div>
 </body>
 </html>
