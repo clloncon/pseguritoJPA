@@ -54,6 +54,17 @@ public class DetalleFacturaController {
     @RequestMapping(value="/guardarEditDetalleFactura", method = RequestMethod.POST)
 	public ModelAndView guardarEditDetalleFactura(DetalleFactura df, RedirectAttributes redirectAttrs) {
 		dfs.edit(df);
+		
+		//modificar factura tb
+		 Factura f = new Factura();
+		f=fs.getById(df.getFactura().getId_factura());
+		f.setItems(dfs.findAllByIdFactura(df.getFactura().getId_factura()));
+		f.setImpuestos((int)f.calcularIVA());
+    	f.setSubtotal((int)f.calcularSubtotal());
+    	f.setTotal((int)f.calcularTotal());
+    	fs.edit(f);
+		
+		
 		redirectAttrs.addAttribute("id_factura", df.getFactura().getId_factura());
 		return new ModelAndView("redirect:/mostrarDetalleFactura/{id_factura}.do");
 	}
@@ -61,6 +72,16 @@ public class DetalleFacturaController {
     @RequestMapping("/eliminarDetalleFactura/{id}/{id_factura}")
     public ModelAndView eliminarDetalleFactura(@PathVariable int id, @PathVariable int id_factura, RedirectAttributes redirectAttrs) {
     	dfs.delete(id);
+    	
+		//modificar factura tb
+		 Factura f = new Factura();
+		f=fs.getById(id_factura);
+		f.setItems(dfs.findAllByIdFactura(id_factura));
+		f.setImpuestos((int)f.calcularIVA());
+     	f.setSubtotal((int)f.calcularSubtotal());
+     	f.setTotal((int)f.calcularTotal());
+     	fs.edit(f);
+    	
     	redirectAttrs.addAttribute("id_factura", id_factura);
     	return new ModelAndView("redirect:/mostrarDetalleFactura/{id_factura}.do");
     }
@@ -82,6 +103,16 @@ public class DetalleFacturaController {
     @RequestMapping(value="/guardarDetalleFactura", method = RequestMethod.POST)
 	public ModelAndView guardarDetalleFactura(DetalleFactura df, RedirectAttributes redirectAttrs) {
 		dfs.add(df);
+		
+		//modificar factura tb
+		 Factura f = new Factura();
+		f=fs.getById(df.getFactura().getId_factura());
+		f.setItems(dfs.findAllByIdFactura(df.getFactura().getId_factura()));
+		f.setImpuestos((int)f.calcularIVA());
+      	f.setSubtotal((int)f.calcularSubtotal());
+      	f.setTotal((int)f.calcularTotal());
+      	fs.edit(f);
+      	
 		redirectAttrs.addAttribute("id_factura", df.getFactura().getId_factura());
     	return new ModelAndView("redirect:/mostrarDetalleFactura/{id_factura}.do");
 	}
