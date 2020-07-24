@@ -11,20 +11,28 @@
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
 </head>
+
 <body>
 <div class="container">
+<div class="row">
+	<div class="col align-self-start">
+
+	
+	</div>
+	<div class="col align-self-center">
 	<c:set var="p" value="${p}"></c:set>
 	<div class="row">
-		<div class="col"><h2>${p.getNombre()} ${p.getApellido()}</h2></div>
+		<div class="col"><h1 class="display-4">${p.getNombre()} ${p.getApellido()}</h1></div>
 	</div>
 	<div class="row">
-		<div class="col"><h4>${p.getCargo()}</h4></div>
+		<div class="col"><h4>${p.getCargo()}</h4>
+		
+		
+		</div>
 	</div>
 	<hr>
-	<div class="row">
-		<div class="col-3">#</div>
-		<div class="col">${p.getId_profesional()}</div>
-	</div>
+	<img class="rounded mx-auto d-block" width="200" height="200" border="30%" src="https://image.freepik.com/vector-gratis/perfil-avatar-mujer-icono-redondo_24640-14042.jpg">
+
 	<div class="row">
 		<div class="col-3">Correo:</div>
 		<div class="col">${p.getCorreo()}</div>
@@ -36,8 +44,12 @@
 	
 	<hr>
 	<div class="row">
-		<a href="${pageContext.request.contextPath}/listarProfesional">Volver</a>
+		<a class="btn btn-primary" href="${pageContext.request.contextPath}/listarProfesional">Volver</a>
 	</div>
+
+</div>
+<div class="col align-self-end"></div>
+</div>
 </div>
 
 </body>

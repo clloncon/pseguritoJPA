@@ -13,49 +13,61 @@
 	crossorigin="anonymous">
 </head>
 <body>
+
 <div class="container">
 	<c:set var="p" value="${p}"></c:set>
-	<h1>>Crear Profesional</h1>
+	<h1 class="display-4">Agregar Profesional</h1>
+		<hr>
+		
 	
 	<form:form action="${pageContext.request.contextPath}/guardarProfesional" method="post">
+	
 			<div class="row">
 				<div class="col-3">Nombre:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<input class="form-control" type="text" name="nombre" />
 				</div>
 			</div>
+				<hr>
+				
 			<div class="row">
-				<div class="col-3">Apellido:</div>
-				<div class="col-3">
-					<input class="form-control" type="text" name="apellido"/>
+				<div class="col-3" class="control-label"><label>Apellido:</label></div>
+				<div class="col-7">
+					<input class="form-control" type="text" name="apellido" required/>
 				</div>
 			</div>
+				<hr>
 			<div class="row">
 				<div class="col-3">Correo:</div>
-				<div class="col-3">
-					<input class="form-control" type="text" name="correo"/>
+				<div class="col-7">
+					<input class="form-control" type="email" name="correo" placeholder="Recuerde Formato Correo @" required/>
+					
 				</div>
 			</div>
+				<hr>
 			<div class="row">
 				<div class="col-3">Telefono:</div>
-				<div class="col-3">
-					<input class="form-control" type="text" name="telefono"/>
-				</div>
+				<div class="col-7">
+					<input class="form-control" type="text" name="telefono" required/>
+				</div>				
 			</div>
-			<div class="row">
+				<hr>
+			<div class="form-row">
 				<div class="col-3">Cargo:</div>
-				<div class="col-3">
-					<input class="form-control" type="text" name="cargo"/>
+				<div class="col-7">
+					<input class="form-control" type="text" name="cargo" required/>
 				</div>
 			</div>
-			<hr>
+				<hr>		
 			<div class="row">
-				<div class="col-3"><a href="${pageContext.request.contextPath}/listarProfesional">Ver listado profesionales</a></div>
-				<div class="col-3"><input class="form-control" type="submit" value="Guardar"></div>
+				<div class="col-1 "><a class="btn btn-secondary"  href="${pageContext.request.contextPath}/listarProfesional">Listado</a></div>
+				<div class="col-1"><input class="btn btn-success" type="submit" value="Guardar" ></div>
 				
 			</div>
 		</form:form>
 </div>
 
+
 </body>
+
 </html>

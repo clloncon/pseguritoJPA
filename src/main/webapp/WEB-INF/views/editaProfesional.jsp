@@ -15,49 +15,54 @@
 <body>
 <div class="container">
 	<c:set var="p" value="${p}"></c:set>
-	<h1>>Editar Profesional</h1>
+	<h1 class="display-4">Editar Profesional</h1>
+	<br>
 	
 	<form:form action="${pageContext.request.contextPath}/guardarEditProfesional" method="post">
 			<input type="hidden" name="id_profesional" value="${p.getId_profesional()}">
 			<div class="row">
 				<div class="col-3">Nombre:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<input class="form-control" type="text" name="nombre"
 						value="${p.getNombre()}" />
 				</div>
 			</div>
+			<hr>
 			<div class="row">
 				<div class="col-3">Apellido:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<input class="form-control" type="text" name="apellido"
 						value="${p.getApellido()}" />
 				</div>
 			</div>
+			<hr>
 			<div class="row">
 				<div class="col-3">Correo:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<input class="form-control" type="text" name="correo"
 						value="${p.getCorreo()}" />
 				</div>
 			</div>
+			<hr>
 			<div class="row">
 				<div class="col-3">Telefono:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<input class="form-control" type="text" name="telefono"
 						value="${p.getTelefono()}" />
 				</div>
 			</div>
+			<hr>
 			<div class="row">
 				<div class="col-3">Cargo:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<input class="form-control" type="text" name="cargo"
 						value="${p.getCargo()}" />
 				</div>
 			</div>
 			<hr>
 			<div class="row">
-				<div class="col-3"><a href="${pageContext.request.contextPath}/listarProfesional">Volver</a></div>
-				<div class="col-3"><input class="form-control" type="submit" value="Guardar"></div>
+				<div class="col-1"><a class="btn btn-secondary" href="${pageContext.request.contextPath}/listarProfesional">Volver</a></div>
+				<div class="col-1"><input class="btn btn-success"type="submit" value="Guardar"></div>
 				
 			</div>
 		</form:form>
