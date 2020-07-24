@@ -12,8 +12,9 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Lista de Facturas</h1>
-
+		<h1 class="display-4">Listado de Facturas</h1>
+		<br>
+		<p><a href="crearFactura">Crear Factura</a></p>
 		<table class="table">
 			<thead class="thead_dark">
 				<tr>
@@ -26,6 +27,7 @@
                         <th>Total</th>
                         <th>Cliente</th>
 				</tr>
+							</thead>
 			<tbody>
 			<c:forEach items="${lista}" var="fact">
 				<tr>
@@ -37,12 +39,12 @@
 					<td>${fact.getSubtotal()}</td>
 					<td>${fact.getTotal()}</td>
 					<td>${fact.getCliente().getNombreEmpresa()}</td>
-					<td><a href="${pageContext.request.contextPath}/editarFactura/${fact.getId_factura()}">Editar </a>| <a href="${pageContext.request.contextPath}/eliminarFactura/${fact.getId_factura()}">Borrar</a></td>
+					<td><a class="btn btn-primary"  href="${pageContext.request.contextPath}/editarFactura/${fact.getId_factura()}">Editar </a>  <a class="btn btn-danger" href="${pageContext.request.contextPath}/eliminarFactura/${fact.getId_factura()}">Borrar</a></td>
 			</c:forEach>
 			</tbody>
-			</thead>
+
 		</table>
-		<p><a href="crearFactura">Crear Factura</a></p>
+		
 	</div>
 </body>
 </html>

@@ -12,8 +12,9 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Detalle de Facturas</h1>
-
+		<h1 class="display-4">Listado de profesionales</h1>
+		<br>
+		<p><a class="btn btn-success" href="crearDetalleFactura">Crear Detalle Factura</a></p>
 		<table class="table">
 			<thead class="thead_dark">
 				<tr>
@@ -32,12 +33,12 @@
 					<td>${detallefact.getPrecio()}</td>
 					<td>${detallefact.getCantidad()}</td>
 					<td>${detallefact.getFactura().getId_factura()}</td>
-					<td><a href="${pageContext.request.contextPath}/editarDetalleFactura/${detallefact.getId_detallefactura()}">Editar </a>| <a href="${pageContext.request.contextPath}/eliminarDetalleFactura/${detallefact.getId_detallefactura()}">Borrar</a></td>
+					<td><a class="btn btn-primary" href="${pageContext.request.contextPath}/editarDetalleFactura/${detallefact.getId_detallefactura()}">Editar </a>  <a class="btn btn-danger" href="${pageContext.request.contextPath}/eliminarDetalleFactura/${detallefact.getId_detallefactura()}">Borrar</a></td>
 			</c:forEach>
 			</tbody>
 			
 		</table>
-		<p><a href="crearDetalleFactura">Crear Detalle Factura</a></p>
+		
 	</div>
 </body>
 </html>
