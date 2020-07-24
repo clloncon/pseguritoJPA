@@ -31,11 +31,11 @@ public class DetalleFacturaController {
             return new ModelAndView("listarDetalleFactura","lista", lista); 
             
     }
-//    @RequestMapping("/mostrarDetalleFactura/{id_factura}")
-//    public ModelAndView mostrarDetalleFactura(@PathVariable int id_factura) {
-//		List<DetalleFactura> df = dfs.findAllById(id_factura);
-//        return new ModelAndView("muestraDetalleFactura","df", df);          
-//    }
+    @RequestMapping("/mostrarDetalleFactura/{id_factura}")
+    public ModelAndView mostrarDetalleFactura(@PathVariable int id_factura) {
+		List<DetalleFactura> df = dfs.findAllByIdFactura(id_factura);
+        return new ModelAndView("muestraDetalleFactura","lista", df);          
+    }
     
     @RequestMapping("/editarDetalleFactura/{id}")
     public ModelAndView editarDetalleFactura(@PathVariable int id) {

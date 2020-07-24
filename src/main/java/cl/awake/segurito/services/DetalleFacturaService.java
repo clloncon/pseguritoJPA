@@ -11,5 +11,5 @@ public interface DetalleFacturaService {
      void edit(DetalleFactura df);
      void delete(DetalleFactura df);
      void delete(int id);
-    //  List<DetalleFactura> findAllById(int id_factura);
+    List<DetalleFactura> findAllByIdFactura(int id_factura);
 }

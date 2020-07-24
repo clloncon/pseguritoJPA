@@ -2,6 +2,10 @@ package cl.awake.segurito.services;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
 //import javax.persistence.Query;
 //
 //import org.hibernate.Session;
@@ -80,11 +84,11 @@ public class DetalleFacturaServiceImpl implements DetalleFacturaService {
 		dfr.delete(id);
 	}
 
-//	@Override
-//	public List<DetalleFactura> findAllById(int id_factura) {
-//		// TODO Auto-generated method stub
-//		return dfrJPQL.findAllById(id_factura);
-//	}
+	@Override
+	public List<DetalleFactura> findAllByIdFactura(int id_factura) {
+		// TODO Auto-generated method stub
+		return dfr.findByIdFactura(id_factura);
+	}
 	
 	
 
