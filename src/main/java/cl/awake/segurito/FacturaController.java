@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import cl.awake.segurito.model.Cliente;
 import cl.awake.segurito.model.Factura;
 import cl.awake.segurito.services.ClienteService;
+import cl.awake.segurito.services.DetalleFacturaService;
 import cl.awake.segurito.services.FacturaService;
 
 @Controller
@@ -24,6 +25,9 @@ public class FacturaController {
 	
 	@Autowired
     FacturaService fs;
+	
+	@Autowired
+    DetalleFacturaService dfs;
     
     @RequestMapping("/listarFactura")
     public ModelAndView listarFactura() {
@@ -50,6 +54,13 @@ public class FacturaController {
     
     @RequestMapping(value="/guardarEditFactura", method = RequestMethod.POST)
 	public ModelAndView guardarEditFactura(Factura f) {
+    	
+    	//actualizando el iva de la factura recien creada por el extras
+		f.setItems(dfs.findAllByIdFactura(f.getId_factura()));
+        f.setImpuestos((int)f.calcularIVA());
+        f.setSubtotal((int)f.calcularSubtotal());
+        f.setTotal((int)f.calcularTotal());
+    	
 		fs.edit(f);
 		return new ModelAndView("redirect:/listarFactura");
 	}
@@ -75,11 +86,14 @@ public class FacturaController {
     
     @RequestMapping(value="/guardarFactura", method = RequestMethod.POST)
 	public ModelAndView guardarFactura(Factura f) {
-		fs.add(f);
-//        f.setIva(f.calcularIVA());
-//        f.setSubtotal((int)f.calcularSubtotal());
-//        f.setTotal((int)f.calcularTotal());
-//        fs.edit(f);	
+		
+    	//actualizando el iva de la factura recien creada por el extras
+		f.setItems(dfs.findAllByIdFactura(f.getId_factura()));
+        f.setImpuestos((int)f.calcularIVA());
+        f.setSubtotal((int)f.calcularSubtotal());
+        f.setTotal((int)f.calcularTotal());
+        
+        fs.add(f);
 		return new ModelAndView("redirect:/listarFactura");
 	}
 }

@@ -16,10 +16,12 @@
 </head>
 <body>
 <div class="container">
-	<c:set var="as" value="${model.f}"></c:set>
+
+	<c:set var="f" value="${model.f}"></c:set>
 	<h1 class="display-4">Agregar Factura</h1>
 		<hr>
 		
+
 	
 	<form:form action="${pageContext.request.contextPath}/guardarFactura" method="post">
 			<div class="row">

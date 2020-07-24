@@ -14,48 +14,41 @@
 </head>
 <body>
 <div class="container">
-	<c:set var="f" value="${model.df}"></c:set>
-	<h1>>Editar Detalle Factura</h1>
+	<c:set var="df" value="${model.df}"></c:set>
+	<h1>>Crear Detalle Factura</h1>
 	
-	<form:form action="${pageContext.request.contextPath}/guardarEditDetalleFactura" method="post">
-			<input type="hidden" name="id_detallefactura" value="${model.df.getId_detallefactura()}">
+	<form:form action="${pageContext.request.contextPath}/guardarDetalleFactura" method="post">
 			<div class="row">
 				<div class="col-3">Nombre:</div>
 				<div class="col-3">
-					<input class="form-control" type="text" name="nombre"
-						value="${model.df.getNombre()}" />
+					<input class="form-control" type="text" name="nombre"/>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-3">Precio:</div>
 				<div class="col-3">
-					<input class="form-control" type="number" name="precio"
-						value="${model.df.getPrecio()}" />
+					<input class="form-control" type="number" name="precio"/>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-3">Cantidad:</div>
+			<div class="col-3">Cantidad:</div>
 				<div class="col-3">
-					<input class="form-control" type="number" name="cantidad"
-						value="${model.df.getCantidad()}" />
+					<input class="form-control" type="number" name="cantidad" max=999999999/>
 				</div>
 			</div>
-
 			<div class="row">
 				<div class="col-3">Factura:</div>
 				<div class="col-3">
-					<input class="form-control" type="number" name="factura.id_factura"
-						value="${model.df.getFactura().getId_factura()}" readonly />
+					<input class="form-control" type="number" name="factura.id_factura" value="${model.id_factura}" max=999999999 readonly/>
 				</div>
 			</div>
-			<hr>
+			<br>
 			<div class="row">
-				<div class="col-3"><a href="${pageContext.request.contextPath}/mostrarDetalleFactura/${model.df.getFactura().getId_factura()}">Volver al detalle Factura</a></div>
-				<div class="col-3"><a href="${pageContext.request.contextPath}/listarFactura">Volver a las facturas</a></div>
+				<div class="col-3"><a href="${pageContext.request.contextPath}/mostrarDetalleFactura/${model.id_factura}">Volver al Detalle Factura</a></div>
+					<div class="col-3"><a href="${pageContext.request.contextPath}/listarFactura">Volver a Factura</a></div>
 				<div class="col-3"><input class="form-control" type="submit" value="Guardar"></div>
-				
 			</div>
 		</form:form>
-</div>
+	</div>
 </body>
 </html>
