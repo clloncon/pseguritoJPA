@@ -13,13 +13,17 @@
 </head>
 <body>
 <div class="container">
+<div class="row">
+	<div class="col align-self-start"></div>
+	<div class="col align-self-center">
     <c:set var="cap" value="${cap}"></c:set>
+        <div class="row">
+        <div class="col"><h1 class="display-4">${cap.getCliente().getNombreEmpresa()}</h1></div>
+    </div>
     <div class="row">
         <div class="col"><h2>${cap.getTema()}</h2></div>
     </div>
-    <div class="row">
-        <div class="col"><h4>${cap.getCliente().getNombreEmpresa()}</h4></div>
-    </div>
+
     <hr>
     <div class="row">
         <div class="col-3">#</div>
@@ -36,8 +40,10 @@
     
     <hr>
     <div class="row">
-        <a href="${pageContext.request.contextPath}/listarCapacitacion">Volver</a>
+        <a class="btn btn-primary"  href="${pageContext.request.contextPath}/listarCapacitacion">Volver</a>
     </div>
+    </div>
+    <div class="col align-self-end"></div>
 </div>
 
 </body>

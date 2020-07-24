@@ -12,8 +12,9 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Lista de Asesorias</h1>
-
+		<h1 class="display-4">Listado de asesorias</h1>
+		<br>
+		<p><a class="btn btn-success" href="crearAsesoria">Crear Asesoria</a></p>
 		<table class="table">
 			<thead class="thead_dark">
 				<tr>
@@ -24,6 +25,7 @@
                         <th>Cliente</th>
                         <th>Profesional</th>
 				</tr>
+				</thead>
 			<tbody>
 			<c:forEach items="${lista}" var="aseso">
 				<tr>
@@ -33,12 +35,12 @@
 					<td>${aseso.getDetalle()}</td>
 					<td>${aseso.getCliente().getNombreEmpresa()}</td>
 					<td>${aseso.getProfesional().getNombre()} ${aseso.getProfesional().getApellido()}</td>
-					<td><a href="${pageContext.request.contextPath}/editarAsesoria/${aseso.getId_asesoria()}">Editar </a>| <a href="${pageContext.request.contextPath}/eliminarAsesoria/${aseso.getId_asesoria()}">Borrar</a></td>
+					<td><a class="btn btn-primary"  href="${pageContext.request.contextPath}/editarAsesoria/${aseso.getId_asesoria()}">Editar </a>  <a class="btn btn-danger" href="${pageContext.request.contextPath}/eliminarAsesoria/${aseso.getId_asesoria()}">Borrar</a></td>
 			</c:forEach>
 			</tbody>
-			</thead>
+			
 		</table>
-		<p><a href="crearAsesoria">Crear Asesoria</a></p>
+		
 	</div>
 </body>
 </html>

@@ -17,30 +17,35 @@
 <body>
 <div class="container">
     <c:set var="cap" value="${model.cap}"></c:set>
-    <h1>>Crear Capacitacion</h1>
-    
+	<h1 class="display-4">Agregar Capacitacion</h1>
+		<hr>
+		
+	
     <form:form action="${pageContext.request.contextPath}/guardarCapacitacion" method="post">
             <div class="row">
                 <div class="col-3">Fecha y hora:</div>
-                <div class="col-3">
+                <div class="col-7">
                     <input class="form-control" type="text" name="fechayhora" id="datetimepicker"/>
                 </div>
             </div>
+             <hr>
             <div class="row">
                 <div class="col-3">Tema:</div>
-                <div class="col-3">
+                <div class="col-7">
                     <input class="form-control" type="text" name="tema"/>
                 </div>
             </div>
+             <hr>
             <div class="row">
                 <div class="col-3">Contenido:</div>
-                <div class="col-3">
+                <div class="col-7">
                     <input class="form-control" type="text" name="contenido"/>
                 </div>
             </div>
+             <hr>
             <div class="row">
                 <div class="col-3">Profesional:</div>
-                <div class="col-3">
+                <div class="col-7">
                     <select name="profesional.id_profesional" class="form-control form-control">
                                 <c:forEach items="${model.listap}" var="profesional">
                                     <option value="${profesional.getId_profesional()}">${profesional.getNombre()}
@@ -49,9 +54,10 @@
                             </select>
                 </div>
             </div>
+             <hr>
             <div class="row">
                 <div class="col-3">Cliente:</div>
-                <div class="col-3">
+                <div class="col-7">
                     <select name="cliente.id_cliente" class="form-control form-control">
                                 <c:forEach items="${model.listac}" var="cliente">
                                     <option value="${cliente.getId_cliente()}">${cliente.getNombreEmpresa()} </option>
@@ -61,8 +67,8 @@
             </div>
             <hr>
             <div class="row">
-                <div class="col-3"><a href="${pageContext.request.contextPath}/listarCapacitacion">Ver listado Capacitacion</a></div>
-                <div class="col-3"><input class="form-control" type="submit" value="Guardar"></div>
+                <div class="col-1"><a class="btn btn-secondary" href="${pageContext.request.contextPath}/listarCapacitacion">Listado</a></div>
+                <div class="col-1"><input  class="btn btn-success" type="submit" value="Guardar"></div>
                 
             </div>
         </form:form>

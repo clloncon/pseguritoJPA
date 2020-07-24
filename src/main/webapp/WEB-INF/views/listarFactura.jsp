@@ -14,7 +14,7 @@
 	<div class="container">
 		<h1 class="display-4">Listado de Facturas</h1>
 		<br>
-		<p><a href="crearFactura">Crear Factura</a></p>
+		<p><a class="btn btn-success" href="crearFactura">Crear Factura</a></p>
 		<table class="table">
 			<thead class="thead_dark">
 				<tr>

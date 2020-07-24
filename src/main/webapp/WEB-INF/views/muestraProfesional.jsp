@@ -15,10 +15,7 @@
 <body>
 <div class="container">
 <div class="row">
-	<div class="col align-self-start">
-
-	
-	</div>
+	<div class="col align-self-start"></div>
 	<div class="col align-self-center">
 	<c:set var="p" value="${p}"></c:set>
 	<div class="row">

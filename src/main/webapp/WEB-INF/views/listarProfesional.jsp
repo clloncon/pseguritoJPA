@@ -36,7 +36,7 @@
 					<td>${prof.getCorreo()}</td>
 					<td>${prof.getTelefono()}</td>
 					<td>${prof.getCargo()}</td>
-					<td><a class="btn btn-primary" href="${pageContext.request.contextPath}/editarProfesional/${prof.getId_profesional()}">Editar </a>  <a class="btn btn-danger" href="${pageContext.request.contextPath}/eliminarProfesional/${prof.getId_profesional()}">Borrar</a></td>
+					<td><a class="btn btn-primary" href="${pageContext.request.contextPath}/editarProfesional/${prof.getId_profesional()}">Editar </a> <a class="btn btn-danger" href="${pageContext.request.contextPath}/eliminarProfesional/${prof.getId_profesional()}">Borrar</a></td>
 			</c:forEach>
 			</tbody>
 			

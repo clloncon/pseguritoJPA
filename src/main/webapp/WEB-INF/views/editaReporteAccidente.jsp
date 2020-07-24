@@ -17,41 +17,47 @@
 <body>
 <div class="container">
     <c:set var="rep" value="${model.rep}"></c:set>
-    <h1>>Editar Reporte Accidente</h1>
+	<h1 class="display-4">Editar Reporte</h1>
+	<br>
+	
     
     <form:form action="${pageContext.request.contextPath}/guardarEditReporteAccidente" method="post">
             <input type="hidden" name="idreporteaccidente" value="${model.rep.getIdreporteaccidente()}">
             <div class="row">
                 <div class="col-3">Fecha:</div>
-                <div class="col-3">
+                <div class="col-7">
                     <input class="form-control" type="text" name="fecha" id="datetimepicker"
                         value="${model.rep.getFecha()}" />
                 </div>
             </div>
+            <hr>
             <div class="row">
                 <div class="col-3">Direccion:</div>
-                <div class="col-3">
+                <div class="col-7">
                     <input class="form-control" type="text" name="direccion" 
                         value="${model.rep.getDireccion()}" />
                 </div>
             </div>
+            <hr>
             <div class="row">
                 <div class="col-3">Labor:</div>
-                <div class="col-3">
+                <div class="col-7">
                     <input class="form-control" type="text" name="labor" 
                         value="${model.rep.getLabor()}" />
                 </div>
             </div>
+            <hr>
             <div class="row">
                 <div class="col-3">Descripcion:</div>
-                <div class="col-3">
+                <div class="col-7">
                     <input class="form-control" type="text" name="descripcion"
                         value="${model.rep.getDescripcion()}" />
                 </div>
             </div>
+            <hr>
             <div class="row">
                 <div class="col-3">Cliente:</div>
-                <div class="col-3">
+                <div class="col-7">
                     <select name="cliente.id_cliente" class="form-control form-control">
                             <c:forEach items="${model.listac}" var="cliente">
                                 <option value="${cliente.getId_cliente()}"
@@ -63,8 +69,8 @@
             </div>
             <hr>
             <div class="row">
-                <div class="col-3"><a href="${pageContext.request.contextPath}/listarReporteAccidente">Volver</a></div>
-                <div class="col-3"><input class="form-control" type="submit" value="Guardar"></div>
+                <div class="col-1"><a class="btn btn-secondary" href="${pageContext.request.contextPath}/listarReporteAccidente">Volver</a></div>
+                <div class="col-1"><input class="btn btn-success" type="submit" value="Guardar"></div>
                 
             </div>
         </form:form>

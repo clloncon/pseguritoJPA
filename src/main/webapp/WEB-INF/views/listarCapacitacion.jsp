@@ -12,8 +12,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Lista de Capacitaciones</h1>
-
+		<h1 class="display-4">Listado de capacitacion</h1>
+		<br>
+		        <p><a class="btn btn-success" href="crearCapacitacion">Crear Capacitacion</a></p>
         <table class="table">
             <thead class="thead_dark">
                 <tr>
@@ -24,6 +25,7 @@
                         <th>Cliente</th>
                         <th>Profesional</th>
                 </tr>
+                            </thead>
             <tbody>
             <c:forEach items="${lista}" var="capac">
                 <tr>
@@ -33,12 +35,12 @@
                     <td>${capac.getContenido()}</td>
                     <td>${capac.getCliente().getNombreEmpresa()}</td>
                     <td>${capac.getProfesional().getNombre()} ${capac.getProfesional().getApellido()}</td>
-                    <td><a href="${pageContext.request.contextPath}/editarCapacitacion/${capac.getId_capacitacion()}">Editar </a>| <a href="${pageContext.request.contextPath}/eliminarCapacitacion/${capac.getId_capacitacion()}">Borrar</a></td>
+                    <td><a class="btn btn-primary"  href="${pageContext.request.contextPath}/editarCapacitacion/${capac.getId_capacitacion()}">Editar </a>  <a class="btn btn-danger"  href="${pageContext.request.contextPath}/eliminarCapacitacion/${capac.getId_capacitacion()}">Borrar</a></td>
             </c:forEach>
             </tbody>
-            </thead>
+
         </table>
-        <p><a href="crearCapacitacion">Crear Capacitacion</a></p>
+
     </div>
 </body>
 </html>

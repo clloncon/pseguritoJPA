@@ -12,8 +12,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Lista de Reporte Accidentes</h1>
-
+		<h1 class="display-4">Listado de reporte</h1>
+		<br>
+		  <p><a class="btn btn-success" href="crearReporteAccidente">Crear Reporte Accidente</a></p>
         <table class="table">
             <thead class="thead_dark">
                 <tr>
@@ -24,6 +25,7 @@
                         <th>Descripcion</th>
                         <th>Cliente</th>
                 </tr>
+                  </thead>
             <tbody>
             <c:forEach items="${lista}" var="reporte">
                 <tr>
@@ -33,12 +35,12 @@
                     <td>${reporte.getLabor()}</td>
                     <td>${reporte.getDescripcion()}</td>
                     <td>${reporte.getCliente().getNombreEmpresa()}</td>
-                    <td><a href="${pageContext.request.contextPath}/editarReporteAccidente/${act.getIdreporteaccidente()}">Editar </a>| <a href="${pageContext.request.contextPath}/eliminarReporteAccidente/${act.getIdreporteaccidente()}">Borrar</a></td>
+                    <td><a class="btn btn-primary" href="${pageContext.request.contextPath}/editarReporteAccidente/${act.getIdreporteaccidente()}">Editar </a>  <a class="btn btn-danger"  href="${pageContext.request.contextPath}/eliminarReporteAccidente/${act.getIdreporteaccidente()}">Borrar</a></td>
             </c:forEach>
             </tbody>
-            </thead>
+          
         </table>
-        <p><a href="crearReporteAccidente">Crear Reporte Accidente</a></p>
+      
     </div>
 </body>
 </html>

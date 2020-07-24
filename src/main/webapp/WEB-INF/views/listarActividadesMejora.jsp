@@ -13,6 +13,8 @@
 <body>
 	<div class="container">
 		<h1>Lista de Actividades</h1>
+		<br>
+			<p><a class="btn btn-success" href="crearActividadesMejora">Crear Actividad de mejora</a></p>
 
 		<table class="table">
 			<thead class="thead_dark">
@@ -26,6 +28,7 @@
                         <th>Cliente</th>
                         <th>Profesional</th>
 				</tr>
+					</thead>
 			<tbody>
 			<c:forEach items="${lista}" var="act">
 				<tr>
@@ -37,12 +40,12 @@
 					<td>${act.getDetalle()}</td>
 					<td>${act.getCliente().getNombreEmpresa()}</td>
 					<td>${act.getProfesional().getNombre()} ${act.getProfesional().getApellido()}</td>
-					<td><a href="${pageContext.request.contextPath}/editarActividadesMejora/${act.getIdactividadmejora()}">Editar </a>| <a href="${pageContext.request.contextPath}/eliminarActividadesMejora/${act.getIdactividadmejora()}">Borrar</a></td>
+					<td><a class="btn btn-primary" href="${pageContext.request.contextPath}/editarActividadesMejora/${act.getIdactividadmejora()}">Editar </a>  <a class="btn btn-danger" href="${pageContext.request.contextPath}/eliminarActividadesMejora/${act.getIdactividadmejora()}">Borrar</a></td>
 			</c:forEach>
 			</tbody>
-			</thead>
+		
 		</table>
-		<p><a href="crearActividadesMejora">Crear Actividad de mejora</a></p>
+	
 	</div>
 </body>
 </html>

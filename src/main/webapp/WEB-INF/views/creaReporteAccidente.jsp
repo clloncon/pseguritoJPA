@@ -17,36 +17,43 @@
 <body>
 <div class="container">
     <c:set var="rep" value="${model.rep}"></c:set>
-    <h1>>Crear Reporte Accidente</h1>
+<h1 class="display-4">Agregar Reporte</h1>
+		<hr>
+		
+	
     
     <form:form action="${pageContext.request.contextPath}/guardarReporteAccidente" method="post">
             <div class="row">
                 <div class="col-3">Fecha:</div>
-                <div class="col-3">
+                <div class="col-7">
                     <input class="form-control" type="text" name="fecha" id="datetimepicker" />
                 </div>
             </div>
+            <hr>
             <div class="row">
                 <div class="col-3">Direccion:</div>
-                <div class="col-3">
+                <div class="col-7">
                     <input class="form-control" type="text" name="direccion"/>
                 </div>
             </div>
+            <hr>
             <div class="row">
                 <div class="col-3">Labor:</div>
-                <div class="col-3">
+                <div class="col-7">
                     <input class="form-control" type="text" name="labor"/>
                 </div>
             </div>
+            <hr>
              <div class="row">
                 <div class="col-3">Descripcion:</div>
-                <div class="col-3">
+                <div class="col-7">
                     <input class="form-control" type="text" name="descripcion"/>
                 </div>
             </div>
+            <hr>
             <div class="row">
                 <div class="col-3">Cliente:</div>
-                <div class="col-3">
+                <div class="col-7">
                     <select name="cliente.id_cliente" class="form-control form-control">
                                 <c:forEach items="${model.listac}" var="cliente">
                                     <option value="${cliente.getId_cliente()}">${cliente.getNombreEmpresa()} </option>
@@ -56,8 +63,8 @@
             </div>
             <hr>
             <div class="row">
-                <div class="col-3"><a href="${pageContext.request.contextPath}/listarReporteAccidente">Ver Reporte Accidentes</a></div>
-                <div class="col-3"><input class="form-control" type="submit" value="Guardar"></div>
+                <div class="col-1"><a class="btn btn-secondary"  href="${pageContext.request.contextPath}/listarReporteAccidente">Listado</a></div>
+                <div class="col-1"><input class="btn btn-success" type="submit" value="Guardar"></div>
                 
             </div>
         </form:form>

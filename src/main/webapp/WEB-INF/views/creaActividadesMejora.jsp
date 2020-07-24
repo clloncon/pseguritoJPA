@@ -17,42 +17,47 @@
 <body>
 <div class="container">
 	<c:set var="ac" value="${model.ac}"></c:set>
-	<h1>>Crear Actividad de mejora</h1>
-	
+	<h1 class="display-4">Agregar actividad de mejora</h1>
+		<hr>
 	<form:form action="${pageContext.request.contextPath}/guardarActividadesMejora" method="post">
 			<div class="row">
 				<div class="col-3">Nombre:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<input class="form-control" type="text" name="nombre" />
 				</div>
 			</div>
+			<hr>
 			<div class="row">
 				<div class="col-3">Fecha Inicio:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<input class="form-control" type="date" name="fechaInicio" id="datetimepicker"/>
 				</div>
 			</div>
+			<hr>
 			<div class="row">
 				<div class="col-3">Fecha Termino:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<input class="form-control" type="date" name="fechaTermino" id="datetimepicker2"/>
 				</div>
 			</div>
+			<hr>
 			<div class="row">
 				<div class="col-3">Estado:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<input class="form-control" type="text" name="estado"/>
 				</div>
 			</div>
+			<hr>
 			<div class="row">
 				<div class="col-3">Detalle:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<input class="form-control" type="text" name="detalle"/>
 				</div>
 			</div>
+			<hr>
 			<div class="row">
 				<div class="col-3">Profesional:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<select name="profesional.id_profesional" class="form-control form-control">
 								<c:forEach items="${model.listap}" var="profesional">
 									<option value="${profesional.getId_profesional()}">${profesional.getNombre()}
@@ -61,9 +66,10 @@
 							</select>
 				</div>
 			</div>
+			<hr>
 			<div class="row">
 				<div class="col-3">Cliente:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<select name="cliente.id_cliente" class="form-control form-control">
 								<c:forEach items="${model.listac}" var="cliente">
 									<option value="${cliente.getId_cliente()}">${cliente.getNombreEmpresa()} </option>
@@ -73,8 +79,8 @@
 			</div>
 			<hr>
 			<div class="row">
-				<div class="col-3"><a href="${pageContext.request.contextPath}/listarActividadesMejora">Ver listado Actividades</a></div>
-				<div class="col-3"><input class="form-control" type="submit" value="Guardar"></div>
+				<div class="col-1"><a class="btn btn-secondary"  href="${pageContext.request.contextPath}/listarActividadesMejora">Listado</a></div>
+				<div class="col-1"><input  class="btn btn-success" type="submit" value="Guardar"></div>
 				
 			</div>
 		</form:form>

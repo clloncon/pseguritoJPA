@@ -52,11 +52,11 @@
 		                        Datos Profesional
 		                    </a>
 		                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		                        <a class="dropdown-item" href="#" target="myFrame">Ingresar Actividad a mejorar</a>
-		                        <a class="dropdown-item" href="nuevaasesoria" target="myFrame">Agendar Asesoria</a>
-		                        <a class="dropdown-item" href="#" target="myFrame">Agendar Capacitacion</a>
-		                        <a class="dropdown-item" href="#" target="myFrame">Revisar Accidentes</a>
-		                        <a class="dropdown-item" href="#" target="myFrame">Revisar Facturacion de clientes</a>
+		                        <a class="dropdown-item" href="crearActividadesMejora" target="myFrame">Ingresar Actividad a mejorar</a>
+		                        <a class="dropdown-item" href="crearAsesoria" target="myFrame">Agendar Asesoria</a>
+		                        <a class="dropdown-item" href="crearCapacitacion" target="myFrame">Agendar Capacitacion</a>
+		                        <a class="dropdown-item" href="listarReporteAccidente" target="myFrame">Revisar Accidentes</a>
+		                        <a class="dropdown-item" href="listarFactura" target="myFrame">Revisar Facturacion de clientes</a>
 		                    </div>
 		                </li>
 		                <!-- Detalle Cliente -->
@@ -66,11 +66,11 @@
 		                        Datos Cliente
 		                    </a>
 		                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		                        <a class="dropdown-item" href="#" target="myFrame">Actividades a mejorar</a>
-		                        <a class="dropdown-item" href="listadoasesoria" target="myFrame">Revisar Asesorias</a>
-		                        <a class="dropdown-item" href="#" target=" myFrame">Revisar Capacitaciones</a>
-		                        <a class="dropdown-item" href="#" target="myFrame">Reportar Accidente</a>
-		                        <a class="dropdown-item" href="listadofactura" target="myFrame">Facturacion</a>
+		                        <a class="dropdown-item" href="listarActividadesMejora" target="myFrame">Actividades a mejorar</a>
+		                        <a class="dropdown-item" href="listarAsesoria" target="myFrame">Revisar Asesorias</a>
+		                        <a class="dropdown-item" href="listarCapacitacion" target="myFrame">Revisar Capacitaciones</a>
+		                        <a class="dropdown-item" href="crearReporteAccidente" target="myFrame">Reportar Accidente</a>
+		                        <a class="dropdown-item" href="listarFactura" target="myFrame">Facturacion</a>
 		                    </div>
 		                </li>
 		            </ul>

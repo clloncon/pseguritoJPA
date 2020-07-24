@@ -13,7 +13,12 @@
 </head>
 <body>
 <div class="container">
+<div class="row">
+	<div class="col align-self-start"></div>
+	<div class="col align-self-center">
+
     <c:set var="rep" value="${rep}"></c:set>
+    
     <div class="row">
         <div class="col"><h2>${rep.getFecha()}</h2></div>
     </div>
@@ -39,8 +44,12 @@
     </div>  
     <hr>
     <div class="row">
-        <a href="${pageContext.request.contextPath}/listarReporteAccidente">Volver</a>
+        <a class="btn btn-primary"  href="${pageContext.request.contextPath}/listarReporteAccidente">Volver</a>
     </div>
+    </div>
+    <div class="col align-self-end"></div>
+    
+</div>
 </div>
 
 </body>
