@@ -12,8 +12,10 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Lista de Cliente</h1>
-
+		<h1 class="display-4">Listado de Clientes</h1>
+		<br>
+		<p><a class="btn btn-success" href="crearCliente">Crear Cliente</a></p>
+		
 		<table class="table">
 			<thead class="thead_dark">
 				<tr>
@@ -22,6 +24,7 @@
                         <th>Rut</th>
                         <th>Fecha Registro</th>
 				</tr>
+					</thead>
 			<tbody>
 			<c:forEach items="${lista}" var="cli">
 				<tr>
@@ -29,12 +32,12 @@
 					<td>${cli.getNombreEmpresa()}</td>
 					<td>${cli.getRut()}</td>
 					<td>${cli.getFechaRegistro()}</td>
-					<td><a href="${pageContext.request.contextPath}/editarCliente/${cli.getId_cliente()}">Editar </a>| <a href="${pageContext.request.contextPath}/eliminarCliente/${cli.getId_cliente()}">Borrar</a></td>
+					<td><a class="btn btn-primary" href="${pageContext.request.contextPath}/editarCliente/${cli.getId_cliente()}">Editar </a>  <a class="btn btn-danger" href="${pageContext.request.contextPath}/eliminarCliente/${cli.getId_cliente()}">Borrar</a></td>
 			</c:forEach>
 			</tbody>
-			</thead>
+		
 		</table>
-		<p><a href="crearCliente">Crear Cliente</a></p>
+	
 	</div>
 </body>
 </html>

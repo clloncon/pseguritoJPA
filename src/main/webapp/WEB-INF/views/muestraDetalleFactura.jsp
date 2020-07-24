@@ -12,8 +12,8 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Detalle de Facturas</h1>
-
+		<h1 class="display-4">Detalle Factura</h1>
+		<br>
 		<table class="table">
 			<thead class="thead_dark">
 				<tr>
@@ -37,7 +37,7 @@
 			</tbody>
 			
 		</table>
-		<p><a href="crearDetalleFactura">Crear Detalle Factura</a></p>
+		<p><a class="btn btn-danger" href="crearDetalleFactura">Crear Detalle Factura</a></p>
 	</div>
 </body>
 </html>

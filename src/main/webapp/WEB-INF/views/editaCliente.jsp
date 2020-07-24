@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Segurito Project</title>
+<title>Editar Cliente </title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
@@ -17,35 +17,37 @@
 <body>
 <div class="container">
 	<c:set var="c" value="${c}"></c:set>
-	<h1>>Editar Cliente</h1>
-	
+	<h1 class="display-4">Editar Cliente</h1>
+	<br>
 	<form:form action="${pageContext.request.contextPath}/guardarEditCliente" method="post">
 			<input type="hidden" name="id_cliente" value="${c.getId_cliente()}">
 			<div class="row">
 				<div class="col-3">Nombre:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<input class="form-control" type="text" name="nombreEmpresa"
 						value="${c.getNombreEmpresa()}" />
 				</div>
 			</div>
+					<hr>
 			<div class="row">
 				<div class="col-3">Rut:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<input class="form-control" type="text" name="rut"
 						value="${c.getRut()}" />
 				</div>
 			</div>
+					<hr>
 			<div class="row">
 				<div class="col-3">Fecha Registro:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<input class="form-control" type="text" name="fechaRegistro" id="datetimepicker"
 						value="${c.getFechaRegistro()}" />
 				</div>
 			</div>
 			<br>
 			<div class="row">
-				<div class="col-3"><a href="${pageContext.request.contextPath}/listarCliente">Volver</a></div>
-				<div class="col-3"><input class="form-control" type="submit" value="Guardar"></div>
+				<div class="col-1"><a class="btn btn-secondary" href="${pageContext.request.contextPath}/listarCliente">Volver</a></div>
+				<div class="col-1"><input class="btn btn-success" type="submit" value="Guardar"></div>
 				
 			</div>
 		</form:form>

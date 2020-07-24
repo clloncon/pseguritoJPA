@@ -39,8 +39,8 @@
 		                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 		                        <a class="dropdown-item" href="crearProfesional" target="myFrame">Crear Profesional</a>
 		                        <a class="dropdown-item" href="listarProfesional" target="myFrame">Listar Profesional</a>
-		                        <a class="dropdown-item" href="listarCliente" target="myFrame">Crear Cliente</a>
-		                        <a class="dropdown-item" href="crearCliente" target="myFrame">Listar Cliente</a>
+		                        <a class="dropdown-item" href="listarCliente" target="myFrame">Listar Cliente</a>
+		                        <a class="dropdown-item" href="crearCliente" target="myFrame">Crear Cliente</a>
 		                        <a class="dropdown-item" href="crearFactura" target="myFrame">Facturacion Clientes</a>
 		                    </div>
 		                </li>
@@ -97,7 +97,7 @@
 
 		        </div>
 		    </nav>
-    <div class="m-4" style="height:800px;">
+    <div class="m-4" style="height:950px;">
         <iframe name="myFrame" style="height: 70%; width: 100%; border: none;">
         </iframe>
     </div>

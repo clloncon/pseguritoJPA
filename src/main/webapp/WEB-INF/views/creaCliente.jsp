@@ -17,31 +17,35 @@
 <body>
 <div class="container">
 	<c:set var="c" value="${c}"></c:set>
-	<h1>>Crear Cliente</h1>
+	<h1 class="display-4">Agregar Cliente</h1>
+		<hr>
+		
 	
 	<form:form action="${pageContext.request.contextPath}/guardarCliente" method="post">
 			<div class="row">
 				<div class="col-3">Nombre:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<input class="form-control" type="text" name="nombreEmpresa" />
 				</div>
 			</div>
+			<hr>
 			<div class="row">
 				<div class="col-3">Rut:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<input class="form-control" type="text" name="rut"/>
 				</div>
 			</div>
+			<hr>
 			<div class="row">
 				<div class="col-3">Fecha Registro:</div>
-				<div class="col-3">
+				<div class="col-7">
 					<input class="form-control" type="date" name="fechaRegistro" id="datetimepicker"/>
 				</div>
 			</div>
 			<br>
 			<div class="row">
-				<div class="col-3"><a href="${pageContext.request.contextPath}/listarCliente">Ver listado clientes</a></div>
-				<div class="col-3"><input class="form-control" type="submit" value="Guardar"></div>
+				<div class="col-1"><a class="btn btn-secondary"  href="${pageContext.request.contextPath}/listarCliente">Listado</a></div>
+				<div class="col-1"><input class="btn btn-success" type="submit" value="Guardar"></div>
 				
 			</div>
 		</form:form>
