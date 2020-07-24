@@ -25,19 +25,20 @@
 				</tr>
 				</thead>
 			<tbody>
-			<c:forEach items="${lista}" var="detallefact">
+			<c:forEach items="${model.lista}" var="detallefact">
 				<tr>
 					<th scope="row">${detallefact.getId_detallefactura()}</th>
 					<td>${detallefact.getNombre()}</td>
 					<td>${detallefact.getPrecio()}</td>
 					<td>${detallefact.getCantidad()}</td>
 					<td>${detallefact.getFactura().getId_factura()}</td>
-					<td><a href="${pageContext.request.contextPath}/editarDetalleFactura/${detallefact.getId_detallefactura()}">Editar </a>| <a href="${pageContext.request.contextPath}/eliminarDetalleFactura/${detallefact.getId_detallefactura()}">Borrar</a></td>
+					<td><a href="${pageContext.request.contextPath}/editarDetalleFactura/${detallefact.getId_detallefactura()}">Editar </a>| <a href="${pageContext.request.contextPath}/eliminarDetalleFactura/${detallefact.getId_detallefactura()}/${detallefact.getFactura().getId_factura()}">Borrar</a></td>
 			</c:forEach>
 			</tbody>
 			
 		</table>
-		<p><a href="crearDetalleFactura">Crear Detalle Factura</a></p>
+		<p><a href="../crearDetalleFactura/${model.id_factura}">Crear Detalle Factura</a></p>
+		<p><a href="../listarFactura">Volver a las Facturas</a></p>
 	</div>
 </body>
 </html>
