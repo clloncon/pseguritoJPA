@@ -23,12 +23,12 @@
         <div class="col"><h2>${rep.getFecha()}</h2></div>
     </div>
     <div class="row">
-        <div class="col"><h4>${ac.getCliente().getNombreEmpresa()}</h4></div>
+        <div class="col"><h4>${rep.getCliente().getNombreEmpresa()}</h4></div>
     </div>
     <hr>
     <div class="row">
         <div class="col-3">#</div>
-        <div class="col">${rep.getIdreporteaccidente()}</div>
+        <div class="col">${rep.getId_reporte()}</div>
     </div>
     <div class="row">
         <div class="col-3">Direccion:</div>

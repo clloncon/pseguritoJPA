@@ -22,7 +22,7 @@
 	
     
     <form:form action="${pageContext.request.contextPath}/guardarEditReporteAccidente" method="post">
-            <input type="hidden" name="idreporteaccidente" value="${model.rep.getIdreporteaccidente()}">
+            <input type="hidden" name="id_reporte" value="${model.rep.getId_reporte()}">
             <div class="row">
                 <div class="col-3">Fecha:</div>
                 <div class="col-7">

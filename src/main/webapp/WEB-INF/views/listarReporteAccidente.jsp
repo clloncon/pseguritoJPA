@@ -29,13 +29,13 @@
             <tbody>
             <c:forEach items="${lista}" var="reporte">
                 <tr>
-                    <th scope="row"><a href="${pageContext.request.contextPath}/mostrarReporteAccidente/${act.getIdreporteaccidente()}">${act.getIdreporteaccidente()}</a></th>
+                    <th scope="row"><a href="${pageContext.request.contextPath}/mostrarReporteAccidente/${reporte.getId_reporte()}">${reporte.getId_reporte()}</a></th>
                     <td>${reporte.getFecha()}</td>
                     <td>${reporte.getDireccion()}</td>
                     <td>${reporte.getLabor()}</td>
                     <td>${reporte.getDescripcion()}</td>
                     <td>${reporte.getCliente().getNombreEmpresa()}</td>
-                    <td><a class="btn btn-primary" href="${pageContext.request.contextPath}/editarReporteAccidente/${act.getIdreporteaccidente()}">Editar </a>  <a class="btn btn-danger"  href="${pageContext.request.contextPath}/eliminarReporteAccidente/${act.getIdreporteaccidente()}">Borrar</a></td>
+                    <td><a class="btn btn-primary" href="${pageContext.request.contextPath}/editarReporteAccidente/${reporte.getId_reporte()}">Editar </a>  <a class="btn btn-danger"  href="${pageContext.request.contextPath}/eliminarReporteAccidente/${reporte.getId_reporte()}">Borrar</a></td>
             </c:forEach>
             </tbody>
           
