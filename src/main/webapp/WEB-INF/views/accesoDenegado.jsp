@@ -9,8 +9,6 @@
 </head>
 	<body>
 	<h2>Sorry, you do not have permission to view this page.</h2>
-Click <a href="<c:url value="/listarProfesional" /> ">here</a> to go to listar profesional. <br>
-Click <a href="<c:url value="/crearProfesional" /> ">here</a> to go back to crear profesional. <br>
 Click <a href="<c:url value="/" /> ">here</a> to go back to the Homepage. <br>
 	</body>
 </html>

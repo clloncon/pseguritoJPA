@@ -147,13 +147,17 @@ margin-left: 4px;
 						<input type="submit" value="Entrar" class="btn float-right login_btn">
 						<input name="reset" type="reset" /> 
 						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+									<p style= "color:red;">Registro de claves<br>
+									Usuario:cliente -- pass:cliente<br>
+									Usuario:profesional -- pass:profesional<br>
+									Usuario:administrador -- pass:administrador<br></p>
 					</div>
 				</form>
-			</div>
-
 		</div>
 	</div>
 </div>
+
+
 	<!-- Jss boostrap -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
